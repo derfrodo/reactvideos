@@ -1,4 +1,5 @@
 import React from "react";
+import { CountRerender } from "./LittleHelpers/CountRerender";
 import { StateHook } from "./StateHook";
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Wir lernen React</h1>
+        <CountRerender>App</CountRerender>
       </header>
       <main>
         <StateHook />

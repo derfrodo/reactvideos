@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { CountRerender } from "../LittleHelpers/CountRerender";
 
 export const StateAsCounter: React.FC<{}> = () => {
   const [count, setCount] = useState<number>(0);
@@ -36,6 +37,7 @@ export const StateAsCounter: React.FC<{}> = () => {
           Increment twice
         </button>
       </div>
+      <CountRerender>Counter</CountRerender>
     </div>
   );
 };

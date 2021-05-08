@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import { CountRerender } from "../LittleHelpers/CountRerender";
 
-export const StateAsProperty: React.FC<{}> = () => {
+export const StateAsPropertyMemorized: React.FC<{}> = () => {
   const [value, setValue] = useState<string>("unset");
 
   return (
     <div>
-      <h3>State as Property.</h3>
+      <h3>State as Property with memorizing Consumption</h3>
       <CountRerender>ComponentwithState</CountRerender>
       <div>
-        <h4>Consumer and Updater</h4>
-        <ConsumingComponent value={value} />
-        <UpdatingComponent setValue={setValue} />
+        <h4>Memorized Consumer and Updater</h4>
+        <MemorizedConsumingComponent value={value} />
+        <MemorizedUpdatingComponent setValue={setValue} />
       </div>
     </div>
   );
@@ -42,3 +42,6 @@ const UpdatingComponent: React.FC<{
     </div>
   );
 };
+
+const MemorizedConsumingComponent = React.memo(ConsumingComponent);
+const MemorizedUpdatingComponent = React.memo(UpdatingComponent);
